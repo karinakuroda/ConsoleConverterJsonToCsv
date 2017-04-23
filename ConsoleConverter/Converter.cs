@@ -30,27 +30,34 @@ namespace ConsoleConverter
         {
             var stringProcessed = "";
             var index = 0;
-            foreach (var callEventDetail in itemDeserialized.transferBatch.callEventDetails)
-            {
-                index += 1;
-                if (callEventDetail.gprsCall != null)
-                {
-                    stringProcessed += String.Format("{0};{1};{2};{3}{4}",
-                    fileNameWithoutExtension,
-                    "GPRS",
-                      callEventDetail.gprsCall.gprsBasicCallInformation.callEventStartTimeStamp.localTimeStamp,
-                    callEventDetail.gprsCall.gprsBasicCallInformation.gprsChargeableSubscriber.chargeableSubscriber.simChargeableSubscriber.imsi,
-                    Environment.NewLine);
-                }
-                else if (callEventDetail.mobileOriginatedCall != null)
-                {
-                    stringProcessed += ProcessMobileOriginatedCall(fileNameWithoutExtension, callEventDetail.mobileOriginatedCall);
-                }
-                else if (callEventDetail.mobileTerminatedCall != null)
-                {
-                    stringProcessed += ProcessMobileTerminatedCall(fileNameWithoutExtension, callEventDetail.mobileTerminatedCall);
-                }
 
+            if (itemDeserialized != null && itemDeserialized.transferBatch != null && itemDeserialized.transferBatch.callEventDetails != null)
+            {
+
+
+                foreach (var callEventDetail in itemDeserialized.transferBatch.callEventDetails)
+                {
+
+                    index += 1;
+                    if (callEventDetail.gprsCall != null)
+                    {
+                        stringProcessed += String.Format("{0};{1};{2};{3}{4}",
+                        fileNameWithoutExtension,
+                        "GPRS",
+                          callEventDetail.gprsCall.gprsBasicCallInformation.callEventStartTimeStamp.localTimeStamp,
+                        callEventDetail.gprsCall.gprsBasicCallInformation.gprsChargeableSubscriber.chargeableSubscriber.simChargeableSubscriber.imsi,
+                        Environment.NewLine);
+                    }
+                    else if (callEventDetail.mobileOriginatedCall != null)
+                    {
+                        stringProcessed += ProcessMobileOriginatedCall(fileNameWithoutExtension, callEventDetail.mobileOriginatedCall);
+                    }
+                    else if (callEventDetail.mobileTerminatedCall != null)
+                    {
+                        stringProcessed += ProcessMobileTerminatedCall(fileNameWithoutExtension, callEventDetail.mobileTerminatedCall);
+                    }
+
+                }
             }
             return stringProcessed;
         }
