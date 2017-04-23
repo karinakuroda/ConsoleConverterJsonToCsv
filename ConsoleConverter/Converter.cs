@@ -35,29 +35,29 @@ namespace ConsoleConverter
             {
 
 
-                foreach (var callEventDetail in itemDeserialized.transferBatch.callEventDetails)
-                {
+                Parallel.ForEach(itemDeserialized.transferBatch.callEventDetails, callEventDetail =>
+               {
 
-                    index += 1;
-                    if (callEventDetail.gprsCall != null)
-                    {
-                        stringProcessed += String.Format("{0};{1};{2};{3}{4}",
-                        fileNameWithoutExtension,
-                        "GPRS",
-                          callEventDetail.gprsCall.gprsBasicCallInformation.callEventStartTimeStamp.localTimeStamp,
-                        callEventDetail.gprsCall.gprsBasicCallInformation.gprsChargeableSubscriber.chargeableSubscriber.simChargeableSubscriber.imsi,
-                        Environment.NewLine);
-                    }
-                    else if (callEventDetail.mobileOriginatedCall != null)
-                    {
-                        stringProcessed += ProcessMobileOriginatedCall(fileNameWithoutExtension, callEventDetail.mobileOriginatedCall);
-                    }
-                    else if (callEventDetail.mobileTerminatedCall != null)
-                    {
-                        stringProcessed += ProcessMobileTerminatedCall(fileNameWithoutExtension, callEventDetail.mobileTerminatedCall);
-                    }
+                   index += 1;
+                   if (callEventDetail.gprsCall != null)
+                   {
+                       stringProcessed += String.Format("{0};{1};{2};{3}{4}",
+                       fileNameWithoutExtension,
+                       "GPRS",
+                         callEventDetail.gprsCall.gprsBasicCallInformation.callEventStartTimeStamp.localTimeStamp,
+                       callEventDetail.gprsCall.gprsBasicCallInformation.gprsChargeableSubscriber.chargeableSubscriber.simChargeableSubscriber.imsi,
+                       Environment.NewLine);
+                   }
+                   else if (callEventDetail.mobileOriginatedCall != null)
+                   {
+                       stringProcessed += ProcessMobileOriginatedCall(fileNameWithoutExtension, callEventDetail.mobileOriginatedCall);
+                   }
+                   else if (callEventDetail.mobileTerminatedCall != null)
+                   {
+                       stringProcessed += ProcessMobileTerminatedCall(fileNameWithoutExtension, callEventDetail.mobileTerminatedCall);
+                   }
 
-                }
+               });
             }
             return stringProcessed;
         }
