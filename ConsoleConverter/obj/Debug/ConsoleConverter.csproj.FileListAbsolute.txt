@@ -1,0 +1,12 @@
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\ConsoleConverter.exe.config
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\ConsoleConverter.exe
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\ConsoleConverter.pdb
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\obj\Debug\ConsoleConverter.csprojResolveAssemblyReference.cache
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\obj\Debug\ConsoleConverter.exe
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\obj\Debug\ConsoleConverter.pdb
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\ConsoleConverter.exe.manifest
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\bin\Debug\ConsoleConverter.application
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\obj\Debug\ConsoleConverter.exe.manifest
+C:\Users\Karina Midori Kuroda\Desktop\ConsoleConverter\ConsoleConverter\obj\Debug\ConsoleConverter.application
